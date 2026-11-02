@@ -25,7 +25,9 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
-
+    img.logo {
+        height: 30px;
+    }
     .nav-container {
         .nav {
             list-style: none;
@@ -45,6 +47,9 @@
 [data-layout="footer"] {
     padding: var(--gap-around);
     background-color: var(--color-accent);
+    img.logo {
+        height: 30px;
+    }
     .nav-container {
         .nav {
             list-style: none;
