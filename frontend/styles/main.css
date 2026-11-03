@@ -68,10 +68,15 @@
 }
 
 /* Styling of all available page components. */
+
 [data-page] {
     width: 100%;
     height: 100%;
 }
+[data-layout="project"]{
+    background-color: #B387F2;
+}
+
 
 /* Styling of all available module components. */
 [data-module] {
