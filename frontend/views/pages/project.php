@@ -4,17 +4,30 @@ js_log($project);
 ?>
 
 <main data-layout="project">
-    <h1><?= $project['title'] ?></h1>
-    <p><?= $project['lead'] ?></p>
+    <section class="hero">
+        <h1><?= $project['title'] ?></h1>
+        <h3><?= $project['lead'] ?></h3>
 
-    <section>
-        <p><?= $project['client'] ?></p>
-        <p class="category">
-            <?php foreach ($project['project_categories'] as $category) : ?>
-                <span class="category-item"><?= $category ?></span>
-            <?php endforeach; ?>
-        </p>
-        <p><?= $project['year'] ?></p>
+        <div class="project-info">
+                <div class="project-info__item">
+                    <h4>Kund:in</h4>
+                    <h6><?= $project['client'] ?></h6>
+                </div>
+
+                <div class="project-info__item">
+                    <h4>Services</h4>
+                     <h6 class="category">
+                     <?php foreach ($project['project_categories'] as $category) : ?>
+                     <span class="category-item"><?= $category ?></span>
+                    <?php endforeach; ?>
+                    </h6>
+                </div>
+
+                <div class="project-info__item">
+                    <h4>Jahr</h4>
+                    <h6><?= $project['year'] ?></h6>
+                </div>
+        </div>
     </section>
 
     <img src="<?= $project['image-main']['src'] ?>" alt="<?= $project['image-main']['alt'] ?>">

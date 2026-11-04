@@ -6,10 +6,8 @@ Container::make('post_meta', 'Projekt')
     ->add_fields([
         Field::make('textarea', 'lead', 'Lead')->set_required(),
         Field::make('text', 'client', 'Kund:in')->set_required(),
-        Field::make('text', 'services', 'Services')->set_required(),
         Field::make('text', 'year', 'Jahr')->set_required(),
         Field::make('image', 'image-main', 'Hauptbild')->set_required(),
-        Field::make('textarea', 'project-heading', 'Projekt – Überschrift')->set_required(),
         Field::make('text', 'project-link', 'Projekt – Link')->set_required(),
         Field::make('textarea', 'challenge-text', 'Challenge – Text')->set_required(),
         Field::make('textarea', 'focus-text', 'Fokus – Text')->set_required(),

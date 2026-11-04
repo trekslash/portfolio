@@ -3,15 +3,88 @@
 
 /* Definition of base styles. */
 :root {
-    /* colors */
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-accent: #B387F2;
-    /* gaps & sizes */
-    --gap-around: 40px;
-    /* fonts */
-    --font-h1: normal 64px/120% serif;
-}
+        /* colors */
+        --color-white: #ffffff;
+        --color-black: #000000;
+        --color-style: #B387F2;
+        --color-accent: #E1F57A;
+        --color-heading: #161616;
+
+        /* gaps & sizes */
+        --gap-around: 40px;
+
+        /* fonts */
+        --font-h1: 600 7.5rem/6.9rem "Clash Display", sans-serif;
+        --letter-spacing-h1: -0.3125rem;
+
+        --font-h2: 600 3.5rem/1 "Clash Display", sans-serif;
+
+        --font-h3: 400 1.5rem/2.1rem "Inter", sans-serif;
+        --letter-spacing-h3: -0.04625rem;
+
+        --font-h4: 650 0.65rem/0.9rem "Inter", sans-serif;
+        --letter-spacing-h4: 0.08231rem;
+
+        --font-h5: 700 0.75rem/1.125rem "Inter", sans-serif;
+        --letter-spacing-h5: 0.09rem;
+
+        --font-h6: 550 0.8rem/1.2rem "Inter", sans-serif;
+        --letter-spacing-h6: -0.00475rem;
+
+        --font-body: 400 1rem/1.5rem "Inter", sans-serif;
+        --letter-spacing-body: -0.05356rem;
+    }
+
+    h1 {
+        color: var(--color-heading);
+        font: var(--font-h1);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-h1);
+    }
+
+    h2 {
+        color: var(--color-heading);
+        font: var(--font-h2);
+        font-style: normal;
+    }
+
+    h3 {
+        color: var(--color-style);
+        font: var(--font-h3);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-h3);
+    }
+
+    h4 {
+        color: var(--color-style);
+        font: var(--font-h4);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-h4);
+        text-transform: uppercase;
+    }
+
+    h5 {
+        color: var(--color-style);
+        font: var(--font-h5);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-h5);
+        text-transform: uppercase;
+    }
+
+    h6 {
+        color: var(--color-heading);
+        font: var(--font-h6);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-h6);
+    }
+
+    p,
+    .body-text {
+        color: var(--color-heading);
+        font: var(--font-body);
+        font-style: normal;
+        letter-spacing: var(--letter-spacing-body);
+    }
 
 /* Styling of all available layout components. */
 [data-layout="header"] {
@@ -74,7 +147,24 @@
     height: 100%;
 }
 [data-layout="project"]{
-    background-color: #B387F2;
+    .project-info {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+        margin-top: 5.6rem;
+
+        width: 100%;
+        padding-block: 36px;
+        border-top: 1px solid rgba(22, 22, 22, 0.2);
+    }
+    .hero{
+        height: 70vh;
+        margin-top: 200px;
+        margin-bottom: 50px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
 }
 
 

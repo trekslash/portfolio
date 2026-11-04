@@ -4,13 +4,11 @@ function get_project_by_id(int $id):array {
     $title = get_the_title($id);
     $lead = carbon_get_post_meta($id, 'lead');
     $client = carbon_get_post_meta($id, 'client');
-    $services = carbon_get_post_meta($id, 'services');
     $year = carbon_get_post_meta($id, 'year');
 
     $image_main_id = carbon_get_post_meta($id, 'image-main');
     $image_main = get_media_by_id($image_main_id);
 
-    $project_heading = carbon_get_post_meta($id, 'project-heading');
     $project_link = carbon_get_post_meta($id, 'project-link');
     $challenge_text = carbon_get_post_meta($id, 'challenge-text');
     $focus_text = carbon_get_post_meta($id, 'focus-text');
