@@ -25,6 +25,13 @@ function get_project_by_id(int $id):array {
 
     $output_text = carbon_get_post_meta($id, 'output-text');
 
+    // → load project_category
+    $project_categories = array_map(function($item) {
+        return $item->name;
+    }, get_the_terms($id, 'project_category'));
+
+    js_log($project_categories);
+// → return data
     return [
         'title' => $title,
         'lead' => $lead,
@@ -41,5 +48,7 @@ function get_project_by_id(int $id):array {
         'bts_2' => $bts_2,
         'bts_2_caption' => $bts_2_caption,
         'output_text' => $output_text,
+        'project_categories' => $project_categories,
+
     ];
 }

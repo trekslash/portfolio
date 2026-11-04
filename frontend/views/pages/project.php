@@ -4,13 +4,16 @@ js_log($project);
 ?>
 
 <main data-layout="project">
-    <p>Project</p>
     <h1><?= $project['title'] ?></h1>
     <p><?= $project['lead'] ?></p>
 
     <section>
         <p><?= $project['client'] ?></p>
-        <p><?= $project['services'] ?></p>
+        <p class="category">
+            <?php foreach ($project['project_categories'] as $category) : ?>
+                <span class="category-item"><?= $category ?></span>
+            <?php endforeach; ?>
+        </p>
         <p><?= $project['year'] ?></p>
     </section>
 
