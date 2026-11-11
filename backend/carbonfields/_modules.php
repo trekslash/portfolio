@@ -2,18 +2,21 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-// -> Konfiguration der verschiedenen Module
+// → Konfiguration der verschiedenen Module
 Container::make('post_meta', 'Module')
     ->where('post_type', '=', 'page')
     ->add_fields([
         Field::make('complex', 'modules', 'Module')
-            // -> example
-            ->add_fields('example', 'Beispiel', [
+
+            // → hero_front
+            ->add_fields('hero_front', 'Hero Startseite', [
+                Field::make('textarea', 'eyebrow', 'Eyebrow'),
                 Field::make('text', 'title', 'Titel')->set_required(),
+                Field::make('textarea', 'subline', 'Subline'),
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
             // todo: add new modules here
-            // -> SETTINGS
+            // → SETTINGS
             ->set_layout('tabbed-vertical')
     ]);
 
@@ -28,6 +31,9 @@ function render_modules (): void {
         switch ($module['_type']) {
             case 'example':
                 $module['image'] = get_media_by_id($module['image'], 'full');
+                break;
+            case 'hero_front':
+                $module['image'] = get_media_by_id($module['image']);
                 break;
                 // todo: add data modifications for modules here as a new case
         }
