@@ -22,6 +22,7 @@ function get_project_by_id(int $id):array {
     $bts_2_caption = carbon_get_post_meta($id, 'bts-2-caption');
 
     $output_text = carbon_get_post_meta($id, 'output-text');
+    $link = get_permalink($id);
 
     // → load project_category
     $project_categories = array_map(function($item) {
@@ -46,6 +47,7 @@ function get_project_by_id(int $id):array {
         'bts_2' => $bts_2,
         'bts_2_caption' => $bts_2_caption,
         'output_text' => $output_text,
+        'link' => $link,
         'project_categories' => $project_categories,
 
     ];
