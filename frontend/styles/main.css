@@ -15,9 +15,10 @@
 
         /* fonts */
         --font-h1: 600 7.5rem/6.9rem "Clash Display", sans-serif;
-        --letter-spacing-h1: -0.3125rem;
+        --letter-spacing-h1: -0.1rem;
 
         --font-h2: 600 3.5rem/1 "Clash Display", sans-serif;
+        --letter-spacing-h3: 0.04625rem;
 
         --font-h3: 400 1.5rem/2.1rem "Inter", sans-serif;
         --letter-spacing-h3: -0.04625rem;
@@ -147,6 +148,34 @@
     height: 100%;
 }
 [data-layout="project"]{
+    margin-left: 80px;
+    margin-right: 80px;
+
+    h3{
+        margin-top: 1rem;
+        width: 60%;
+
+    }
+    .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin: 0 0 2.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--color-style);
+    }
+
+    img,
+    video {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
     .project-info {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -158,15 +187,108 @@
         border-top: 1px solid rgba(22, 22, 22, 0.2);
     }
     .hero{
-        height: 70vh;
-        margin-top: 200px;
+        height: 100%;
+        margin-top: 150px;
         margin-bottom: 50px;
-        margin-left: 80px;
-        margin-right: 80px;
+    }
+
+    .project-intro {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        column-gap: 8rem;
+        padding-block: 8rem;
+    }
+
+    .project-intro__left {
+        .eyebrow {
+            color: var(--color-style);
+            font: var(--font-h5);
+            letter-spacing: var(--letter-spacing-h5);
+            text-transform: uppercase;
+        }
+
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+            padding: 1rem 1.6rem;
+            border-radius: 999px;
+            background-color: var(--color-accent);
+            color: var(--color-black);
+            font: var(--font-body);
+            text-decoration: none;
+        }
+    }
+
+    .project-intro__right {
+        padding-top: 5rem;
+    }
+
+    .project-intro__item {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 2rem;
+        padding-block: 2.5rem;
+        border-top: 1px solid rgba(22, 22, 22, 0.2);
+
+        &:last-child {
+            border-bottom: 1px solid rgba(22, 22, 22, 0.2);
+        }
     }
 
 }
 
+    .project-bts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 44px;
+        align-items: end;
+        width: 100%;
+    }
+
+    .project-bts__item {
+        margin: 0;
+    }
+
+    .project-bts__item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .project-bts__item figcaption {
+        margin-top: 1rem;
+        color: var(--color-style);
+        font: var(--font-h6);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .project-bts__item--large img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .project-bts__item--small img {
+        aspect-ratio: 6 / 5;
+    }
+
+    .output {
+    background-color: var(--color-heading);
+    height: 60vh;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    padding: 80px;
+    margin-top: 100px;
+    justify-content: center;
+
+}
+
+    .output h2 {
+    color: var(--color-white);
+}
 
 /* Styling of all available module components. */
 [data-module] {
@@ -201,12 +323,12 @@
     row-gap: clamp(2rem, 5vw, 4rem);
     min-height: 90vh;
     padding: clamp(4rem, 8vw, 10rem) clamp(1.5rem, 10vw, 15rem) clamp(4rem, 10vw, 15rem);
-    color: var(--color-text);
+    color: var(--color-black);
 
     & > .image {
         grid-column: 2;
         grid-row: 1;
-        width: 80%
+        width: 80%;
         height: 24.6875rem;
         object-fit: cover;
         filter: grayscale(1);
@@ -274,7 +396,7 @@
         aspect-ratio: 1;
         border-radius: 50%;
         background: var(--color-accent);
-        color: var(--color-text);
+        color: var(--color-black);
         transition: transform 0.25s ease;
 
         &:hover { transform: translateY(4px); }
@@ -322,11 +444,18 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
 
-        img {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img,
+        video {
             width: 100%;
-            height: 200px;
+            height: 300px;
             object-fit: cover;
             overflow: hidden;
+            display: block;
         }
     }
 }

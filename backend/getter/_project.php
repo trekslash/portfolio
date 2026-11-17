@@ -12,6 +12,8 @@ function get_project_by_id(int $id):array {
     $project_link = carbon_get_post_meta($id, 'project-link');
     $challenge_text = carbon_get_post_meta($id, 'challenge-text');
     $focus_text = carbon_get_post_meta($id, 'focus-text');
+    $subtitel = carbon_get_post_meta($id, 'subtitel');
+    $link_extern = carbon_get_post_meta($id, 'link-extern');
 
     $bts_1_id = carbon_get_post_meta($id, 'bts-1');
     $bts_1 = get_media_by_id($bts_1_id);
@@ -42,6 +44,8 @@ function get_project_by_id(int $id):array {
         'project_link' => $project_link,
         'challenge_text' => $challenge_text,
         'focus_text' => $focus_text,
+        'subtitel' => $subtitel,
+        'link-extern' => $link_extern,
         'bts_1' => $bts_1,
         'bts_1_caption' => $bts_1_caption,
         'bts_2' => $bts_2,

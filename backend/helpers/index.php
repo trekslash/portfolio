@@ -23,12 +23,15 @@ function get_media_by_id(int|string $id, string $size = 'm'): false|array
         'alt' => get_post_meta($id, '_wp_attachment_image_alt', true) ?: get_the_title($id),
     ];
     $image = wp_get_attachment_image_src($id, $size);
+    $mime = get_post_mime_type($id) ?: '';
+    $data['mime'] = $mime;
+
     if ($image) {
         $data['src'] = $image[0];
         $data['type'] = 'image';
     } else {
         $data['src'] = wp_get_attachment_url($id);
-        $data['type'] = get_post_mime_type($id);
+        $data['type'] = str_starts_with($mime, 'video/') ? 'video' : $mime;
     }
     return $data;
 }
