@@ -1,6 +1,5 @@
 <?php
 $data = $args['data'];
-js_log($data);
 ?>
 
 <section data-module="hero_front">

@@ -3,7 +3,7 @@ $data = $args['data'];
 ?>
 
 <section data-module="overview_projects">
-    <h2><?= $data['title'] ?></h2>
+    <h2 class="title-white"><?= $data['title'] ?></h2>
     <div class="projects">
         <?php foreach ($data['selection'] as $project_id) : ?>
             <?php
@@ -16,5 +16,11 @@ $data = $args['data'];
             );
             ?>
         <?php endforeach; ?>
+
+        <div><a class="button" href="<?= esc_url($project['link-extern']) ?>" target="_blank" rel="noopener">
+            Alle Projekte
+            <span aria-hidden="true">→</span>
+        </a>
+        </div>
     </div>
 </section>

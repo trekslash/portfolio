@@ -15,6 +15,7 @@ Container::make('post_meta', 'Module')
                 Field::make('textarea', 'subline', 'Subline'),
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
+
             // → overview_projects
             ->add_fields('overview_projects', 'Übersicht Projekte', [
                 Field::make('text', 'title', 'Titel')->set_required(),
@@ -26,6 +27,22 @@ Container::make('post_meta', 'Module')
                         ]
                     ])
             ])
+
+            // → approach
+            ->add_fields('approach', 'Ansatz', [
+                Field::make('text', 'eyebrow', 'Eyebrow'),
+                Field::make('textarea', 'title', 'Titel')
+                    ->set_help_text('Zeilenumbruch = neue Zeile im Titel')
+                    ->set_required(),
+                Field::make('complex', 'items', 'Einträge')
+                    ->setup_labels(['plural_name' => 'Einträge', 'singular_name' => 'Eintrag'])
+                    ->add_fields([
+                        Field::make('text', 'title', 'Titel'),
+                        Field::make('text', 'description', 'Beschreibung'),
+                    ]),
+                Field::make('textarea', 'text', 'Text'),
+            ])
+
             // todo: add new modules here
             // → SETTINGS
             ->set_layout('tabbed-vertical')
